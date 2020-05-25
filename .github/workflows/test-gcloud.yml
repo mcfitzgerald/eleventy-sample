@@ -1,4 +1,4 @@
-name: Push Folder to Cloud Storage
+name: Test gcloud commans
 
 on:
   push:
@@ -7,14 +7,12 @@ on:
 
 
 jobs:
-  setup-build-publish-deploy:
-    name: Setup, Build, Publish, and Deploy
+  print-gcloud-info:
+    name: Install and check gcloud utility
     runs-on: ubuntu-latest
 
     steps:
-      - id: upload-file
-        uses: bharathkkb/github-actions/upload-cloud-storage@add-gcs-action
-        with:
+       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+         with:
           credentials: ${{ secrets.GCE_SA_KEY }}
-          path: ./peanut.txt
-          destination: mikes_new_bucket/index.html
+       - run: gcloud info
