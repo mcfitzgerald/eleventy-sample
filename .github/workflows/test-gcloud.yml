@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - id: upload-file
-        uses: bharathkkb/github-actions/upload-cloud-storage@master
+        uses: bharathkkb/github-actions/upload-cloud-storage@add-gcs-action
         with:
           credentials: ${{ secrets.GCE_SA_KEY }}
           path: ../index.html
