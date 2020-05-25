@@ -14,5 +14,5 @@ jobs:
     steps:
        - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
          with:
-          credentials: ${{ secrets.GCE_SA_KEY }}
+          service_account_key: ${{ secrets.GCE_SA_KEY }}
        - run: gcloud info
