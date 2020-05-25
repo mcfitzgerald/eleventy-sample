@@ -1,0 +1,20 @@
+name: Push Folder to Cloud Storage
+
+on:
+  push:
+    branches:
+    - master
+
+
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish, and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: upload-file
+        uses: GoogleCloudPlatform/github-actions/upload-cloud-storage@master
+        with:
+          credentials: ${{ secrets.GCE_SA_KEY }}
+          path: ../index.html
+          destination: mikes_new_bucket/index.html
