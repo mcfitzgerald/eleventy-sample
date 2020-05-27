@@ -1,4 +1,4 @@
-name: Test gcloud commans
+name: Test gcloud commands
 
 on:
   push:
@@ -15,4 +15,4 @@ jobs:
        - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
          with:
           service_account_key: ${{ secrets.GCE_SA_KEY }}
-       - run: gcloud info
+       - run: gsutil list
