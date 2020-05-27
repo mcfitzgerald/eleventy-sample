@@ -15,4 +15,8 @@ jobs:
        - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
          with:
           service_account_key: ${{ secrets.GCE_SA_KEY }}
-       - run: gsutil list
+       - run: |
+           gcloud init
+           gcloud config set project ${{ secrets.GCE_PROJECT }}
+           gcloud info
+           gsutil list
