@@ -16,7 +16,5 @@ jobs:
          with:
           service_account_key: ${{ secrets.GCE_SA_KEY }}
        - run: |
-           gcloud init
            gcloud config set project ${{ secrets.GCE_PROJECT }}
-           gcloud info
            gsutil list
