@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: mcfitzgerald/action-build-eleventy # soon to be on marketplace?
+    - uses: github.com/mcfitzgerald/action-build-eleventy@master # soon to be on marketplace?
       with:
         path: $GITHUB_WORKSPACE
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
